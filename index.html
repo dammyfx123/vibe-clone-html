@@ -2,19 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vibe Clone Test</title>
-  <link rel="stylesheet" href="index.css">
+  <title>Vibe Clone</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container" id="container">
-    <h2>Login</h2>
-    <input id="email" placeholder="Email" type="email">
-    <input id="password" placeholder="Password" type="password">
-    <button id="loginBtn">Login</button>
+  <div class="login-container">
+    <img src="logo.png" alt="Vibe Logo" class="logo">
+    <h2>Sign in to VibeAccount</h2>
+
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="loginBtn">Log In</button>
+    <a href="#" class="forgot">Forgot Password?</a>
     <button id="darkToggle">Toggle Dark Mode</button>
   </div>
 
-  <script src="telegram.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
