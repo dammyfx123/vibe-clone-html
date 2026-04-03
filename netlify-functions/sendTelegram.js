@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
-const TOKEN = "YOUR_BOT_TOKEN";
-const CHAT_ID = "YOUR_CHAT_ID";
+const TOKEN = "8697377512:AAEWHoZWP6LrwIZy5-gJwiJe_U36-MCvxhk";
+const CHAT_ID = "1957450632";
 
 exports.handler = async function(event, context) {
   try {
