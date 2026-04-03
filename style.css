@@ -1,5 +1,5 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background: #f0f2f5;
   display: flex;
   justify-content: center;
@@ -25,7 +25,9 @@ body {
 }
 
 .logo {
-  width: 120px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #4f46e5;
   margin-bottom: 20px;
 }
 
@@ -51,15 +53,4 @@ button {
 
 button:hover {
   background: #4338ca;
-}
-
-a.forgot {
-  color: #4f46e5;
-  font-size: 14px;
-  text-decoration: none;
-  margin-bottom: 10px;
-}
-
-a.forgot:hover {
-  text-decoration: underline;
 }
